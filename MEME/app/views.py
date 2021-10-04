@@ -4,7 +4,7 @@ import requests
 
 
 def getdata(request):
-	response = request.get('https://meme-api.herokuapp.com/gimme').json()
+	response = requests.get('https://meme-api.herokuapp.com/gimme').json()
 	context = {
 		'url': response['url']
 	}
