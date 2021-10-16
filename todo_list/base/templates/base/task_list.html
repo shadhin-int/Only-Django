@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo-List</title>
+</head>
+<body>
+<h1> My To Do List</h1>
+<table border=1>
+    <tr>
+        <th>Item</th>
+        <th></th>
+    </tr>
+    {% for task in tasks %}
+    <tr>
+        <td>{{task.title}}</td>
+        <td><a href="{% url 'task' task.id %}">View</a></td>
+
+    </tr>
+    {% empty %}
+    <h3>No items in the list</h3>
+    {% endfor %}
+</table>
+</body>
+</html>
