@@ -1,21 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>User Registration</title>
-</head>
-<body>
+{% extends 'base/main.html' %}
 
-<form method="post", action="">
-    {% csrf_token %}
-    {{form.as_p}}
+{% block content %}
 
-    <input type="submit", value="Register">
-</form>
+<div class="card-body">
+    <form method="post" , action="">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <input class="button" type="submit" , value="Register">
+    </form>
+</div>
 
 <p>
-    Already have an account?  <a href="{% url 'login' %}">Login</a>
+    Already have an account? <a href="{% url 'login' %}">Login</a>
 </p>
-
-</body>
-</html>
+{%endblock content%}

@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Task: Create</title>
-</head>
-<body>
-<form method="post" action="">
-    <a href="{% url 'tasks' %}">Go Back</a>
-    {% csrf_token%}
-    {{form.as_p}}
-    <input type="submit" value="submit">
-</form>
-</body>
-</html>
+{% extends 'base/main.html' %}
+
+{% block content %}
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">&#8592;Back</a>
+</div>
+<div class="card-body">
+    <form method="post" action="">
+        {% csrf_token%}
+        {{form.as_p}}
+        <input class="button" type="submit" value="submit">
+    </form>
+</div>
+{%endblock content%}

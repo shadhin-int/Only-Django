@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Task: Delete Confirmation</title>
-</head>
-<body>
-<form action="", method="post">
-    <a href="{% url 'tasks' %}">Go Back</a>
-    {%csrf_token%}
-    <p>Are you sure to want to delete <b>"{{task}}"</b> this ? </p>
-    <input value="Delete", type="submit">
-</form>
-</body>
-</html>
+{% extends 'base/main.html' %}
+
+{% block content %}
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">&#8592;Back</a>
+</div>
+<div class="card-body">
+    <form action="" , method="post">
+        {%csrf_token%}
+        <p>Are you sure to want to delete <b>"{{task}}"</b> this ? </p>
+        <input class="button" value="Delete" , type="submit">
+    </form>
+</div>
+{%endblock content%}
